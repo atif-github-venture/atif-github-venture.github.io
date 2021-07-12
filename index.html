@@ -29,7 +29,7 @@
                 <a class="nav-link" onclick="vizSection()">Visualization</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="disclaimerSection()">Disclaimer</a>
+                <a class="nav-link" onclick="NotesSection()">Notes</a>
             </li>
         </ul>
     </div>
@@ -92,7 +92,7 @@
             </a>
         </div>
     </div>
-    <div id="disclaimerDIV" style="display: none">
+    <div id="NotesDIV" style="display: none">
         <div class="alert alert-dismissible alert-warning">
             <h4 class="alert-heading">Attention!</h4>
             <p class="mb-0">This work is purely for academic purpose only!<br>
@@ -100,8 +100,8 @@
         </div>
         <div class="alert alert-dismissible alert-success">
             <strong>Browser Support!</strong>
-            <br> The contents of this webpage has been tested with following version and above 'Version 91.0.4472.106'.
-            <br>You can download the latest version of chrome from <a href="https://www.google.com/chrome/" class="alert-link">here</a>.
+            <br> The contents of this webpage has been tested with following version of Chrome browser 'Version 91.0.4472.106' and Version 14.1.1 in case of Safari.
+            <br>You can download the latest version of chrome <a href="https://www.google.com/chrome/" class="alert-link">here</a>.
         </div>
         <div class="alert alert-dismissible alert-info">
             <strong>Heads up!</strong> This work is inspired by <a href="https://datatopics.worldbank.org/universal-health-coverage/coronavirus/" class="alert-link">THE WORLD BANK</a>
@@ -135,7 +135,7 @@
             x.style.display = "block";
             document.getElementById("vizDIV").style.display = "none"
             document.getElementById("reportDIV").style.display = "none"
-            document.getElementById("disclaimerDIV").style.display = "none"
+            document.getElementById("NotesDIV").style.display = "none"
         } else {
             x.style.display = "none";
         }
@@ -146,7 +146,7 @@
             x.style.display = "block";
             document.getElementById("vizDIV").style.display = "none"
             document.getElementById("homeDIV").style.display = "none"
-            document.getElementById("disclaimerDIV").style.display = "none"
+            document.getElementById("NotesDIV").style.display = "none"
         } else {
             x.style.display = "none";
         }
@@ -157,13 +157,13 @@
             x.style.display = "block";
             document.getElementById("homeDIV").style.display = "none"
             document.getElementById("reportDIV").style.display = "none"
-            document.getElementById("disclaimerDIV").style.display = "none"
+            document.getElementById("NotesDIV").style.display = "none"
         } else {
             x.style.display = "none";
         }
     }
-    function disclaimerSection() {
-        var x = document.getElementById("disclaimerDIV");
+    function NotesSection() {
+        var x = document.getElementById("NotesDIV");
         if (x.style.display === "none") {
             x.style.display = "block";
             document.getElementById("vizDIV").style.display = "none"
