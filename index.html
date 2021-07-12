@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!--https://getbootstrap.com/docs/4.0/components/carousel/-->
+<!--https://datatopics.worldbank.org/universal-health-coverage/coronavirus/-->
 <head>
     <meta charset="utf-8">
     <title>Narrative Visualization</title>
@@ -26,6 +27,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" onclick="vizSection()">Visualization</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="disclaimerSection()">Disclaimer</a>
             </li>
         </ul>
     </div>
@@ -88,7 +92,21 @@
             </a>
         </div>
     </div>
-
+    <div id="disclaimerDIV" style="display: none">
+        <div class="alert alert-dismissible alert-warning">
+            <h4 class="alert-heading">Attention!</h4>
+            <p class="mb-0">This work is purely for academic purpose only!<br>
+                The author does not intent to sway or create or communicate any idea pertaining to the current world COVID-19 situation.</p>
+        </div>
+        <div class="alert alert-dismissible alert-success">
+            <strong>Browser Support!</strong>
+            <br> The contents of this webpage has been tested with following version and above 'Version 91.0.4472.106'.
+            <br>You can download the latest version of chrome from <a href="https://www.google.com/chrome/" class="alert-link">here</a>.
+        </div>
+        <div class="alert alert-dismissible alert-info">
+            <strong>Heads up!</strong> This work is inspired by <a href="https://datatopics.worldbank.org/universal-health-coverage/coronavirus/" class="alert-link">THE WORLD BANK</a>
+        </div>
+    </div>
 
 
 </div>
@@ -107,6 +125,7 @@
             <span class="tm-current-year">2021</span> U.I.U.C | Narrative Visualization
         </p>
     </div>
+
 </div>
 </body>
 <script>
@@ -116,6 +135,7 @@
             x.style.display = "block";
             document.getElementById("vizDIV").style.display = "none"
             document.getElementById("reportDIV").style.display = "none"
+            document.getElementById("disclaimerDIV").style.display = "none"
         } else {
             x.style.display = "none";
         }
@@ -126,6 +146,7 @@
             x.style.display = "block";
             document.getElementById("vizDIV").style.display = "none"
             document.getElementById("homeDIV").style.display = "none"
+            document.getElementById("disclaimerDIV").style.display = "none"
         } else {
             x.style.display = "none";
         }
@@ -136,6 +157,18 @@
             x.style.display = "block";
             document.getElementById("homeDIV").style.display = "none"
             document.getElementById("reportDIV").style.display = "none"
+            document.getElementById("disclaimerDIV").style.display = "none"
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function disclaimerSection() {
+        var x = document.getElementById("disclaimerDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            document.getElementById("vizDIV").style.display = "none"
+            document.getElementById("reportDIV").style.display = "none"
+            document.getElementById("homeDIV").style.display = "none"
         } else {
             x.style.display = "none";
         }
