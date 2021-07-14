@@ -99,15 +99,6 @@ async function barinit() {
         .attr("dy", ".15em")
         .attr("transform", "rotate(-20)");
 
-    // vertical grid lines
-    // chart.append('g')
-    //   .attr('class', 'grid')
-    //   .attr('transform', `translate(0, ${height})`)
-    //   .call(makeXLines()
-    //     .tickSize(-height, 0, 0)
-    //     .tickFormat('')
-    //   )
-
     chart.append('g')
         .attr('class', 'grid')
         .call(makeYLines()
@@ -158,7 +149,7 @@ async function barinit() {
 
                     let text = ''
                     if (divergence > 0) text += '+'
-                    text += `${divergence}%`
+                    text += `${divergence}`
 
                     return idx !== i ? text : '';
                 })
