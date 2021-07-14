@@ -34,7 +34,7 @@ async function covidcase() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    data = await d3.csv("data/covid-us-states-group.csv")
+    data = await d3.csv("data/covid-us-states-group-date.csv")
     data.forEach(function (d) {
         d.date = parseDate(d.date);
         d.cases = +d.cases;
@@ -79,8 +79,9 @@ async function covidcase() {
         .datum(data)
         .attr("class", "line")
         .attr("d", line)
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 2.5);
+        .transition().duration(3000).delay(1000)
+        .style("fill", "#69b3a2")
+        .attr("stroke-width", 2.5)
 
     var focus = svg.append("g")
         .attr("class", "focus")

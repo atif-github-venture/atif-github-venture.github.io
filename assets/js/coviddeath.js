@@ -28,13 +28,13 @@ async function coviddeath() {
             return y(d.deaths);
         });
 
-    var svg = d3.select("#chart2").append("svg")
+    var svg = d3.select("#chart1").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    data = await d3.csv("data/covid-us-states-group.csv")
+    data = await d3.csv("data/covid-us-states-group-date.csv")
 
     data.forEach(function (d) {
         d.date = parseDate(d.date);
@@ -80,8 +80,9 @@ async function coviddeath() {
         .datum(data)
         .attr("class", "line")
         .attr("d", line)
-        .attr("stroke", "red")
-        .attr("stroke-width", 2.5);
+        .transition().duration(3000).delay(1000)
+        .style("fill", "red")
+        .attr("stroke-width", 2.5)
 
     var focus = svg.append("g")
         .attr("class", "focus")
