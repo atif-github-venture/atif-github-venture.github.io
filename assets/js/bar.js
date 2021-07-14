@@ -1,53 +1,57 @@
 async function barinit() {
     const sample = [
         {
-            language: 'Rust',
-            value: 78.9,
+            language: 'Heart\ndisease',
+            value: 650573,
             color: '#000000'
+        },{
+            language: 'Covid-19',
+            value: 596967,
+            color: '#507dca'
         },
         {
-            language: 'Kotlin',
-            value: 75.1,
+            language: 'Cancer',
+            value: 558161,
             color: '#00a2ee'
         },
         {
-            language: 'Python',
-            value: 68.0,
+            language: 'Stroke',
+            value: 143348,
             color: '#fbcb39'
         },
         {
-            language: 'TypeScript',
-            value: 67.0,
+            language: 'Respiratory\ndisease',
+            value: 130801,
             color: '#007bc8'
         },
         {
-            language: 'Go',
-            value: 65.6,
+            language: 'Accidents',
+            value: 117602,
             color: '#65cedb'
         },
         {
-            language: 'Swift',
-            value: 65.1,
+            language: 'Diabetes',
+            value: 74927,
             color: '#ff6e52'
         },
         {
-            language: 'JavaScript',
-            value: 61.9,
+            language: 'Alzheimer',
+            value: 71487,
             color: '#f9de3f'
         },
         {
-            language: 'C#',
-            value: 60.4,
+            language: 'Influenza',
+            value: 62903,
             color: '#5d2f8e'
         },
         {
-            language: 'F#',
-            value: 59.6,
+            language: 'Kidney\ndisease',
+            value: 43833,
             color: '#008fc9'
         },
         {
-            language: 'Clojure',
-            value: 59.6,
+            language: 'Septicemia',
+            value: 34003,
             color: '#507dca'
         }
     ];
@@ -71,7 +75,7 @@ async function barinit() {
 
     const yScale = d3.scaleLinear()
         .range([height, 0])
-        .domain([0, 100]);
+        .domain([0, 800000]);
 
     // vertical grid lines
     // const makeXLines = () => d3.axisBottom()
@@ -82,10 +86,18 @@ async function barinit() {
 
     chart.append('g')
         .attr('transform', `translate(0, ${height})`)
-        .call(d3.axisBottom(xScale));
+        .call(d3.axisBottom(xScale)).selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-20)");
 
     chart.append('g')
-        .call(d3.axisLeft(yScale));
+        .call(d3.axisLeft(yScale)).selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-20)");
 
     // vertical grid lines
     // chart.append('g')
@@ -171,9 +183,10 @@ async function barinit() {
         .append('text')
         .attr('class', 'value')
         .attr('x', (a) => xScale(a.language) + xScale.bandwidth() / 2)
-        .attr('y', (a) => yScale(a.value) + 30)
+        .attr('y', (a) => yScale(a.value)-10)
         .attr('text-anchor', 'middle')
-        .text((a) => `${a.value}%`)
+        .text((a) => `${a.value}`)
+        .style("fill", "white")
 
     svg
         .append('text')
@@ -182,21 +195,23 @@ async function barinit() {
         .attr('y', margin / 2.4)
         .attr('transform', 'rotate(-90)')
         .attr('text-anchor', 'middle')
-        .text('Number of Death')
+        .style("fill", "red")
+        .text('Number of Deaths')
 
     svg.append('text')
         .attr('class', 'label')
         .attr('x', width / 2 + margin)
         .attr('y', height + margin * 1.7)
         .attr('text-anchor', 'middle')
-        .text('States (U.S.A)')
+        .style("fill", "red")
+        .text('Causes of death')
 
     svg.append('text')
         .attr('class', 'title')
         .attr('x', width / 2 + margin)
         .attr('y', 40)
         .attr('text-anchor', 'middle')
-        .text('Other Leading Cause of Death')
+        .text('Covid-19 & Other Leading Cause of Death')
 
     svg.append('text')
         .attr('class', 'source')
