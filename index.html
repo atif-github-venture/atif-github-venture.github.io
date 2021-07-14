@@ -17,9 +17,10 @@
     <script src="assets/js/bar.js"></script>
     <script src="assets/js/covidcase.js"></script>
     <script src="assets/js/coviddeath.js"></script>
+    <script src="assets/js/scatter.js"></script>
 </head>
 <style> circle {fill: lightblue; stroke: black;} </style>
-<body onload='barinit(); covidcase(); coviddeath()'>
+<body onload='barinit(); covidcase(); coviddeath(); scatterinit()'>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="position: fixed;z-index: 9999; width: 100%;height: 50px;top: 0; left: 0;">
     <a class="navbar-brand">Narrative Visualization</a>
@@ -71,8 +72,6 @@
                 <div class="carousel-item" id="chart2">
                 </div>
                 <div class="carousel-item" id='chart3'>
-                    <svg width=1000 height=600>
-                    </svg>
                 </div>
                 <div class="carousel-item" id='chart4'>
                     <svg width=1000 height=600>
