@@ -80,7 +80,7 @@ async function coviddeath() {
         .datum(data)
         .attr("class", "line")
         .attr("d", line)
-        .transition().duration(3000).delay(1000)
+        // .transition().duration(3000).delay(1000)
         .style("fill", "red")
         .attr("stroke-width", 2.5)
 

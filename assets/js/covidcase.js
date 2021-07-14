@@ -79,7 +79,7 @@ async function covidcase() {
         .datum(data)
         .attr("class", "line")
         .attr("d", line)
-        .transition().duration(3000).delay(1000)
+        // .transition().duration(3000).delay(1000)
         .style("fill", "#69b3a2")
         .attr("stroke-width", 2.5)
 

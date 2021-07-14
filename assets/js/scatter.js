@@ -60,40 +60,36 @@ async function scatterinit() {
         .style("text-decoration", "underline")
         .text("Covid-19: Cases Vs Deaths");
 
-    // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
-    // Its opacity is set to 0: we don't see it by default.
     var tooltip = d3.select("#chart3")
         .append("div")
         .style("opacity", 0)
         .attr("class", "tooltip")
-        .style("background-color", "yellow")
+        .style("background-color", "black")
         .style("border", "solid")
         .style("border-width", "1px")
         .style("border-radius", "5px")
         .style("padding", "10px")
 
-
-    // A function that change this tooltip when the user hover a point.
-    // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
-    function mouseover() {
+    var mouseover = function(d) {
         tooltip
             .style("opacity", 1)
     }
 
-    var mousemove = function (d) {
+    var mousemove = function(d) {
         tooltip
             .html("State: " + d.state + "<br>Cases: "+ d.cases + "<br>Deaths: "+ d.deaths)
-            .style("left", (d3.mouse(this)[0] + 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+            .style("left", (d3.mouse(this)[0]+90) + "px")
             .style("top", (d3.mouse(this)[1]) + "px")
+            // .style("fill", "red")
     }
 
-    // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
-    function mouseout() {
+    var mouseleave = function(d) {
         tooltip
             .transition()
-            .duration(200)
+            .duration(5000)
             .style("opacity", 0)
     }
+
 
     // Add dots
     var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
@@ -106,23 +102,23 @@ async function scatterinit() {
         '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
         '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
         '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
-    svg.append('g')
+    dot = svg.append('g')
         .selectAll("dot")
         .data(data)
         .enter()
         .append("circle")
-        .transition().duration(2000).delay(1000)
+        // .transition().duration(2000).delay(1000)
         .attr("cx", function (d) {
             return x(d.deaths);
         })
         .attr("cy", function (d) {
             return y(d.cases);
         })
-        .attr("r", 5)
+        .attr("r", 7)
         .style("fill", function(d,i) { return colorArray[i]; })
         .style("opacity", 0.3)
         .style("stroke", "black")
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseout", mouseout)
+        .on("mouseout", mouseover )
+        .on("mousemove", mousemove )
+        .on("mouseleave", mouseleave )
 }
