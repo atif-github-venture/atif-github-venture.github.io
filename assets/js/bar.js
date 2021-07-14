@@ -52,7 +52,7 @@ async function barinit() {
         }
     ];
 
-    const svg = d3.select('#chart2').select('svg');
+    const svg = d3.select('#chart3').select('svg');
     // const svgContainer = d3.select('#chart2');
 
     const margin = 80;
