@@ -1,56 +1,56 @@
 async function barinit() {
     const sample = [
         {
-            language: 'Heart\ndisease',
+            disease: 'Heart\ndisease',
             value: 650573,
             color: '#000000'
         },{
-            language: 'Covid-19',
+            disease: 'Covid-19',
             value: 596967,
             color: '#507dca'
         },
         {
-            language: 'Cancer',
+            disease: 'Cancer',
             value: 558161,
             color: '#00a2ee'
         },
         {
-            language: 'Stroke',
+            disease: 'Stroke',
             value: 143348,
             color: '#fbcb39'
         },
         {
-            language: 'Respiratory\ndisease',
+            disease: 'Respiratory\ndisease',
             value: 130801,
             color: '#007bc8'
         },
         {
-            language: 'Accidents',
+            disease: 'Accidents',
             value: 117602,
             color: '#65cedb'
         },
         {
-            language: 'Diabetes',
+            disease: 'Diabetes',
             value: 74927,
             color: '#ff6e52'
         },
         {
-            language: 'Alzheimer',
+            disease: 'Alzheimer',
             value: 71487,
             color: '#f9de3f'
         },
         {
-            language: 'Influenza',
+            disease: 'Influenza',
             value: 62903,
             color: '#5d2f8e'
         },
         {
-            language: 'Kidney\ndisease',
+            disease: 'Kidney\ndisease',
             value: 43833,
             color: '#008fc9'
         },
         {
-            language: 'Septicemia',
+            disease: 'Septicemia',
             value: 34003,
             color: '#507dca'
         }
@@ -63,6 +63,24 @@ async function barinit() {
     const width = 1000 - 2 * margin;
     const height = 600 - 2 * margin;
 
+    const type = d3.annotationCalloutCircle
+
+    const annotations = [{
+        note: {
+            // label: "Note how it compares to other deaths in 2005",
+            bgPadding: 20,
+            title: "Deaths in 1.5 yrs: Note how it compares to other deaths in 2005"
+        },
+        x: 200,
+        y: 200,
+        dy: -40,
+        dx: 160,
+        subject: {
+            radius: 30,
+            radiusPadding: 1
+        }
+    }]
+
     const chart = svg.append('g')
         .attr('transform', `translate(${margin}, ${margin})`)
         .attr('width',500)
@@ -70,7 +88,7 @@ async function barinit() {
 
     const xScale = d3.scaleBand()
         .range([0, width])
-        .domain(sample.map((s) => s.language))
+        .domain(sample.map((s) => s.disease))
         .padding(0.4)
 
     const yScale = d3.scaleLinear()
@@ -114,7 +132,7 @@ async function barinit() {
     barGroups
         .append('rect')
         .attr('class', 'bar')
-        .attr('x', (g) => xScale(g.language))
+        .attr('x', (g) => xScale(g.disease))
         .attr('y', (g) => yScale(g.value))
         .attr('height', (g) => height - yScale(g.value))
         .attr('width', xScale.bandwidth())
@@ -126,7 +144,7 @@ async function barinit() {
                 .transition()
                 .duration(300)
                 .attr('opacity', 0.6)
-                .attr('x', (a) => xScale(a.language) - 5)
+                .attr('x', (a) => xScale(a.disease) - 5)
                 .attr('width', xScale.bandwidth() + 10)
 
             const y = yScale(actual.value)
@@ -140,7 +158,7 @@ async function barinit() {
 
             barGroups.append('text')
                 .attr('class', 'divergence')
-                .attr('x', (a) => xScale(a.language) + xScale.bandwidth() / 2)
+                .attr('x', (a) => xScale(a.disease) + xScale.bandwidth() / 2)
                 .attr('y', (a) => yScale(a.value) + 30)
                 .attr('fill', 'white')
                 .attr('text-anchor', 'middle')
@@ -163,7 +181,7 @@ async function barinit() {
                 .transition()
                 .duration(300)
                 .attr('opacity', 1)
-                .attr('x', (a) => xScale(a.language))
+                .attr('x', (a) => xScale(a.disease))
                 .attr('width', xScale.bandwidth())
 
             chart.selectAll('#limit').remove()
@@ -173,7 +191,7 @@ async function barinit() {
     barGroups
         .append('text')
         .attr('class', 'value')
-        .attr('x', (a) => xScale(a.language) + xScale.bandwidth() / 2)
+        .attr('x', (a) => xScale(a.disease) + xScale.bandwidth() / 2)
         .attr('y', (a) => yScale(a.value)-10)
         .attr('text-anchor', 'middle')
         .text((a) => `${a.value}`)
@@ -209,4 +227,26 @@ async function barinit() {
         .attr('x', width - margin / 2)
         .attr('y', height + margin * 1.7)
         .attr('text-anchor', 'start')
+
+    const makeAnnotations = d3.annotation()
+        .editMode(true)
+        //also can set and override in the note.padding property
+        //of the annotation object
+        .notePadding(15)
+        .type(type)
+        //accessors & accessorsInverse not needed
+        //if using x, y in annotations JSON
+        .accessors({
+            xScale: d => xScale(d.disease),
+            yScale: d => yScale(d.value)
+        })
+        .accessorsInverse({
+            disease: d => xScale.invert(d.xScale),
+            value: d => yScale.invert(d.yScale)
+        })
+        .annotations(annotations)
+    d3.select("svg")
+        .append("g")
+        .attr("class", "annotation-group")
+        .call(makeAnnotations)
 }
