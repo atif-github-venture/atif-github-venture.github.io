@@ -23,10 +23,10 @@
     <script src="assets/js/coviddeath.js"></script>
     <script src="assets/js/scatter.js"></script>
     <script src="assets/js/transbar.js"></script>
-    <script src="assets/js/atif.js"></script>
+    <script src="assets/js/covid-death-alter.js"></script>
 </head>
 <style> circle {fill: lightblue; stroke: black;} </style>
-<body onload='barinit(); covidcase(); coviddeath(); scatterinit(); transbarinit()'>
+<body onload='barinit(); covidcase(); coviddeath(); scatterinit(); transbarinit(); covidDeathAlter()'>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="position: fixed;z-index: 9999; width: 100%;height: 50px;top: 0; left: 0;">
     <a class="navbar-brand">Narrative Visualization</a>
@@ -91,9 +91,9 @@
 <!--                        <p>Welcome to NY!</p>-->
 <!--                    </div>-->
                 </div>
-<!--                <div class="carousel-item">-->
-<!--                    <div id='chart6'></div>-->
-<!--                </div>-->
+                <div class="carousel-item">
+                    <div id='chart6'></div>
+                </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="position: absolute; top: 50%; z-index: 5; display: inline-block">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
