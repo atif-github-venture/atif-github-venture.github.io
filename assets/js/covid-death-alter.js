@@ -1,5 +1,5 @@
 async function covidDeathAlter() {
-    var margin = {top: 30, right: 120, bottom: 30, left: 150},
+    var margin = {top: 30, right: 120, bottom: 30, left: 50},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom,
         tooltip = {width: 100, height: 100, x: 10, y: -30};
@@ -42,10 +42,12 @@ async function covidDeathAlter() {
     });
 
 
-    x.domain([data[0].date, data[data.length - 1].date]);
-    y.domain(d3.extent(data, function (d) {
-        return d.deaths;
-    }));
+    // x.domain([data[0].date, data[data.length - 1].date]);
+    // y.domain(d3.extent(data, function (d) {
+    //     return d.deaths;
+    // }));
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain(d3.extent(data, function(d) { return d.deaths; }));
 
     svg.append("g")
         .attr("class", "x axis")
