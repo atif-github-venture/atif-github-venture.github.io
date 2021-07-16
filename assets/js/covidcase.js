@@ -57,7 +57,7 @@ async function covidcase() {
         .text("Cases due to Covid-19");
 
     svg.append("g")
-        .attr("class", "x axis")
+        .attr("class", "axisRed")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis).selectAll("text")
         .style("text-anchor", "end")
@@ -66,7 +66,7 @@ async function covidcase() {
         .attr("transform", "rotate(-20)");
 
     svg.append("g")
-        .attr("class", "y axis")
+        .attr("class", "axisRed")
         .call(yAxis)
         .append("text")
         .attr("transform", "rotate(-90)")
