@@ -48,7 +48,7 @@ async function transbarinit() {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Value");
+            .text("Deaths");
 
         var updateBars = function (data) {
             // First update the y-axis domain to match data
@@ -69,7 +69,7 @@ async function transbarinit() {
                     return yScale(d);
                 })
                 .attr("height", function (d, i) {
-                    console.log("h: "+ yScale(d))
+                    // console.log("h: "+ yScale(d))
                     return height - yScale(d);
                 });
 

@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <title>Narrative Visualization</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/line.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -22,6 +23,7 @@
     <script src="assets/js/coviddeath.js"></script>
     <script src="assets/js/scatter.js"></script>
     <script src="assets/js/transbar.js"></script>
+    <script src="assets/js/atif.js"></script>
 </head>
 <style> circle {fill: lightblue; stroke: black;} </style>
 <body onload='barinit(); covidcase(); coviddeath(); scatterinit(); transbarinit()'>
@@ -69,6 +71,7 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" id="chart1">
@@ -88,6 +91,9 @@
 <!--                        <p>Welcome to NY!</p>-->
 <!--                    </div>-->
                 </div>
+<!--                <div class="carousel-item">-->
+<!--                    <div id='chart6'></div>-->
+<!--                </div>-->
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="position: absolute; top: 50%; z-index: 5; display: inline-block">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
