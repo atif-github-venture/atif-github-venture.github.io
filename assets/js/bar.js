@@ -108,7 +108,7 @@ async function barinit() {
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
-        .attr("transform", "rotate(-20)");
+        .attr("transform", "rotate(-10)");
 
     chart.append('g')
         .call(d3.axisLeft(yScale)).selectAll("text")

@@ -1,7 +1,7 @@
 async function transbarinit() {
     var fileName = "./data/other_death.csv";
 
-    var deathCause = ["Heart disease", "Cancer","Stroke", "Respiratory disease","Accidents","Diabetes",
+    var deathCause = ["Heart disease", "Covid-19", "Cancer","Stroke", "Respiratory disease","Accidents","Diabetes",
         "Alzheimer","Influenza","Kidney disease","Septicemia"]
     var makeVis = function (stateMap) {
         // Define dimensions of vis
