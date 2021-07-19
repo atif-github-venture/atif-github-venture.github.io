@@ -43,6 +43,16 @@ async function transbarinit() {
             .attr("class", "axisRed")
             .call(yAxis);
 
+        canvas
+            .append('text')
+            .attr('class', 'label')
+            .attr('x', -(height / 2))
+            .attr('y', margin)
+            .attr('transform', 'rotate(-90)')
+            .attr('text-anchor', 'middle')
+            .style("fill", "red")
+            .text('Number of Deaths')
+
         yAxisHandleForUpdate.append("text")
             .attr("transform", "rotate(-90)")
             .attr("y", 6)
