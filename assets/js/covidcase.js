@@ -77,6 +77,13 @@ async function covidcase() {
         .style("text-anchor", "end")
         .text("Number of cases");
 
+    svg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(y)
+            .tickSize(-width)
+            .tickFormat("")
+        );
+
     svg.append("path")
         .datum(data)
         .attr("class", "line")

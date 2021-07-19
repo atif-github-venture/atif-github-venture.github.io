@@ -78,6 +78,13 @@ async function coviddeath() {
         .style("text-anchor", "end")
         .text("Number of Deaths");
 
+    svg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(y)
+            .tickSize(-width)
+            .tickFormat("")
+        );
+
     svg.append("path")
         .datum(data)
         .attr("class", "line")

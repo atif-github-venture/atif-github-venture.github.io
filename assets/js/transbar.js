@@ -29,7 +29,7 @@ async function transbarinit() {
         var xAxis = d3.axisBottom(xScale)
 
         canvas.append("g")
-            .attr("class", "x axis")
+            .attr("class", "axisRed")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis).selectAll("text")
             .style("text-anchor", "end")
@@ -40,7 +40,7 @@ async function transbarinit() {
         var yAxis = d3.axisLeft(yScale);
 
         var yAxisHandleForUpdate = canvas.append("g")
-            .attr("class", "y axis")
+            .attr("class", "axisRed")
             .call(yAxis);
 
         yAxisHandleForUpdate.append("text")
@@ -49,6 +49,13 @@ async function transbarinit() {
             .attr("dy", ".71em")
             .style("text-anchor", "end")
             .text("Deaths");
+
+        canvas.append("g")
+            .attr("class", "grid")
+            .call(d3.axisLeft(yScale)
+                .tickSize(-width)
+                .tickFormat("")
+            );
 
         var updateBars = function (data) {
             // First update the y-axis domain to match data

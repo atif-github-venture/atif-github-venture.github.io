@@ -60,6 +60,13 @@ async function scatterinit() {
         .style("text-decoration", "underline")
         .text("Covid-19: Cases Vs Deaths");
 
+    svg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(y)
+            .tickSize(-width)
+            .tickFormat("")
+        );
+
     var tooltip = d3.select("#chart3")
         .append("div")
         .style("opacity", 0)
