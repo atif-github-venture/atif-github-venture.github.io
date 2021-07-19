@@ -75,6 +75,7 @@ async function coviddeath() {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
+        .style("fill", "red")
         .style("text-anchor", "end")
         .text("Number of Deaths");
 

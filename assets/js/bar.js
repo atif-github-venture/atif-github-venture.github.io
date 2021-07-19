@@ -72,7 +72,7 @@ async function barinit() {
             title: "Deaths in 1.5 yrs: Note how it compares to other deaths in 2005"
         },
         x: 200,
-        y: 200,
+        y: 180,
         dy: -40,
         dx: 160,
         subject: {
@@ -201,7 +201,7 @@ async function barinit() {
         .append('text')
         .attr('class', 'label')
         .attr('x', -(height / 2) - margin)
-        .attr('y', margin / 2.4)
+        .attr('y', margin / 6)
         .attr('transform', 'rotate(-90)')
         .attr('text-anchor', 'middle')
         .style("fill", "red")

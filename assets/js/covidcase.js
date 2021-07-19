@@ -75,7 +75,8 @@ async function covidcase() {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Number of cases");
+        .text("Number of cases")
+        .style("fill", "Blue");
 
     svg.append("g")
         .attr("class", "grid")
