@@ -4,6 +4,8 @@ async function covidcase() {
         height = 500 - margin.top - margin.bottom,
         tooltip = {width: 100, height: 100, x: 10, y: -30};
 
+    data = await d3.csv("data/covid-us-states-group-date.csv")
+
     var parseDate = d3.timeParse("%Y-%m-%d"),
         bisectDate = d3.bisector(function (d) {
             return d.date;
@@ -34,7 +36,7 @@ async function covidcase() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    data = await d3.csv("data/covid-us-states-group-date.csv")
+
     data.forEach(function (d) {
         d.date = parseDate(d.date);
         d.cases = +d.cases;
