@@ -6,8 +6,8 @@ async function transbarinit() {
     var makeVis = function (stateMap) {
         // Define dimensions of vis
         var margin = {top: 30, right: 50, bottom: 80, left: 100},
-            width = 800 - margin.left - margin.right,
-            height = 600 - margin.top - margin.bottom;
+            width = 1000 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
 
         // Make x scale
         var xScale = d3.scaleBand()
@@ -64,7 +64,7 @@ async function transbarinit() {
                 .attr("x", function (d, i) {
                     return xScale(deathCause[i]);
                 })
-                .attr("width", xScale.bandwidth()-5)
+                .attr("width", xScale.bandwidth()-15)
                 .attr("y", function (d, i) {
                     return yScale(d);
                 })

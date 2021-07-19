@@ -65,7 +65,7 @@
     </div>
     <div id="vizDIV" style="display: none">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-            <ol class="carousel-indicators" style="position: fixed; top: 80%">
+            <ol class="carousel-indicators" style="position: fixed; top: 90%">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -79,39 +79,84 @@
                         <div class="card-header">Background</div>
                         <div class="card-body">
                             <h4 class="card-title">A brief overview</h4>
-                            <p class="card-text">When I started this project, and started looking at various dtypes of data, I could pick nothing other,
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
-                                When I started this project, and started looking at various dtypes of data, I could pick nothing other
+                            <p class="card-text" style="font-size: medium; font-family: 'Comic Sans MS',monospace; text-align: justify">When I started this project, and was looking at various types of data,
+                                I could pick nothing other than the hot on-going world of Covid. There are tons of conspiracy theories,
+                                I love learning briefly about different views of people, but I have my own perspective and its likely based on data.<br><br>
+                                There was one question of many that was bothering me a lot.
+                                Was the impact of Covid on death rate really substantially high? Now this can be interpreted in many
+                                different ways. I just wanted to see where we stand right now in terms of the number of deaths in USA.<br>
+                                I started looking for data on death caused by other diseases but not much luck and tripped on 2005 data per state
+                                within USA on death related to leading causes. Voila! Even though it’s kind of remote comparison as situations and
+                                things are different now, but it’s not too long ago, is it? So I went ahead!.<br>
+                                <br>Now, one can argue about how old a disease is, the prevention technologies, and what not, but that's a story of another day!<br><br>
+                            </p>
+                            <p style="font-family: 'Bradley Hand',cursive; font-size: x-large">
+                                <b>The idea is simple, to find, how severe was Covid-19 in terms of death impact to this world (cherry picked USA)?</b>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="chart1">
+                    <div class="alert alert-dismissible alert-warning" style="max-width: 180rem; max-height: 180rem">
+                        <p style="font-family: 'Comic Sans MS', monospace; text-align: justify"><i>
+                            This data of covid case and death which is in this scene and the next one is from the early
+                            2020 when it all began till June 2021. Here you can explore the incremental trajectory of cases
+                            and death with date on horizontal (x-axis) and numbers on vertical axis (y-axis). The vertical scale
+                            is in millions for ‘cases’ and thousands in case of ‘deaths’. These data is cumulative of states. You can also find tooltip (when hover) to explore the data.
+                        </i></p>
+                    </div>
                 </div>
                 <div class="carousel-item" id="chart2">
+                    <div class="alert alert-dismissible alert-warning" style="max-width: 180rem; max-height: 180rem">
+                        <p style="font-family: 'Comic Sans MS', monospace; text-align: justify"><i>
+                            Please refer to previous slide for the information on this slide!
+                            In previous and current slide you can notice the increasing pattern of the cases and death.
+                            So in many cases this can be taken as death directly proportional to cases in many cases.
+                        </i></p>
+                    </div>
                 </div>
                 <div class="carousel-item" id='chart3'>
+                    <div class="alert alert-dismissible alert-warning" style="max-width: 180rem; max-height: 180rem">
+                        <p style="font-family: 'Comic Sans MS', monospace; text-align: justify"><i>
+                            What you looking at here is a scatterplot of deaths vs cases in numbers put together for all the
+                            states within USA. When you hover over, you can see which state had how many cases and deaths overall.
+                            This data on current slide is cumulative of date. You can say there is a pattern of direct proportionality
+                            as I was indicating earlier.
+                        </i></p>
+                    </div>
                 </div>
                 <div class="carousel-item" id='chart4'>
-                    <svg width=800 height=400>
+                    <svg width=800 height=350>
                     </svg>
+                    <div class="alert alert-dismissible alert-warning" style="max-width: 180rem; max-height: 180rem">
+                        <p style="font-family: 'Comic Sans MS', monospace; text-align: justify"><i>
+                            Here I have created a simple bar chart to put things in perspective in descending order of magnitude
+                            of death occurrences overall in all states for Covid-19 in the span mentioned earlier with deaths due
+                            to other causes from 2005 data of all states in USA. I have also implemented a line which appears
+                            to help visually in giving idea of magnitude (y-axis) against the ordinal death causes. Also,
+                            to help, when hover this should show a difference of numbers +/- compared to the bar/s next to it.
+                        </i>
+                            <b>To my original question on the Covid-19 impact, it’s very much comparable to heart disease and cancer and
+                            not to forget, the covid death data is for 1.5 years and yes, its communicable disease unlike heart disease
+                            and cancer. I will leave it up to you to have your conclusion, but I have mine &#128540;
+                        </b></p>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <div id='chart5'></div>
+                <div class="carousel-item" id='chart5'>
+                    <div class="alert alert-dismissible alert-warning" style="max-width: 180rem; max-height: 180rem">
+                        <p style="font-family: 'Comic Sans MS', monospace; text-align: justify"><i>
+                            I have created this additional slide so you can explore further per state in terms of magnitude
+                            of deaths for these diseases, alongside of Covid-19. And again, this is per state within USA and
+                            timeline for these data is same as explained earlier. Try changing to “Maryland” and see how impactful
+                            or not death was due to “Septicemia”
+                        </i></p>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="position: fixed; top: 80%; z-index: 5; display: inline-block; width: 30%">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="position: fixed; top: 90%; z-index: 5; display: inline-block; width: 30%">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="position: fixed; top: 80%; z-index: 5; display: inline-block; width: 30%">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="position: fixed; top: 90%; z-index: 5; display: inline-block; width: 30%">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>

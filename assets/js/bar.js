@@ -61,7 +61,7 @@ async function barinit() {
 
     const margin = 80;
     const width = 1000 - 2 * margin;
-    const height = 600 - 2 * margin;
+    const height = 500 - 2 * margin;
 
     const type = d3.annotationCalloutCircle
 

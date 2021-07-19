@@ -3,7 +3,7 @@ async function scatterinit() {
     // set the dimensions and margins of the graph
     var margin = {top: 30, right: 120, bottom: 30, left: 160},
         width = 960 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom;
+        height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     var svg = d3.select("#chart3")
