@@ -61,7 +61,94 @@
     </div>
     <div id="reportDIV" style="display: none">
         <br>
-        <p>Report</p>
+        <h2>Report/Essay</h2>
+        <p>To avoid repetition and redundant explanation in some sections I have briefly referenced or kept to minimal explanation if the point of view or topic is covered in other section. This happened as there were quite a few areas of discussion which lapped over each other.</p>
+        <br>
+        <h3>Sections</h3>
+        <br>
+        <h4>Messaging: What is the message you are trying to communicate with the narrative visualization?</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>The message I am communicating here is how severe the impact of covid-19 has been in terms of death rate in a given stipulated duration. The comparison is however in two different chosen time period but that’s not idea to compare within same slice of time period but to understand the comparable aspect of the data in terms of death severity.
+            I have, first, painted the picture of overall covid cases and its resultant death numbers and then painted the view of relationship between the cases and death. And then it’s been compared to the death numbers of other high death rate/number diseases for just one year (2005).
+            When one visually sees the overall outcome after a given period, one can note that there were few other diseases/causes of death which yield pretty much similar death rate/numbers. Do we pay equal attention to other death causes and be equally proactive to curb the death rate or was the covid-19 hyped owing to the large devastating effect it has left on world economy and the way we lived?
+        </i></p>
+        <br>
+        <h4>Narrative Structure: Which structure was your narrative visualization designed to follow (martini glass, interactive slide show or drop-down story)? How does your narrative visualization follow that structure? (All of these structures can include the opportunity to "drill-down" and explore. The difference is where that opportunity happens in the structure.)</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>The scenes are built on martini glass concept for narrative structure. This structure built here follows the tight pattern of telling a tale with given flexibility to user to hover and check different data presented, which is later at the end followed by a scene which enables user to do free exploration of the death rate/numbers caused due to other reasons and its impact, driving a visual impact in terms of measurable and comparable numbers.
+            There is a specific chronology of data which I have presented in the martini glass style, taking the user from covid cases to death, to the relation between the two, to demonstrate using bar charts based on positions of bars to give sense of quantification of nominal/categorical items.
+            The last scene is solid conclusion plus a way of further examination by the user.
+        </i></p>
+        <br>
+
+        <br>
+        <h4>Visual Structure: What visual structure is used for each scene? How does it ensure the viewer can understand the data and navigate the scene? How does it highlight to urge the viewer to focus on the important parts of the data in each scene? How does it help the viewer transition to other scenes, to understand how the data connects to the data in other scenes?</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>The visual structure of each scene has been picked for a reason. The covid cases and deaths were a continuous series of events so I have used the line chart along with tooltip on each axes points.
+            The visual structure begins with the introduction to my thought process and kicking off the tale. I have used 2 navigation points in the scenes to enable user to go back and forth (left and right arrow). I understand providing more navigation may confuse some users, but from my perspective it provides the opportunity to go back as well in case there is some conclusion or cross relation between the scene that needs to be re-visited for later realization. Also, I have added the carousel slider to jump from any scene to any scene.
+            The visual structure pretty much in every scene contains a title and clear chosen axis categories with highlighted horizontal position system. Where it was not possible to have the x-axis data points mentioned I have tilted them at an angle for better view. All the axes have names to represent them, with tooltip (to hover is mentioned in the write-up on each scene) in every scene and unit of data very clearly can be comprehended as well.
+            And most importantly I have used a section of write up to support my visualization and tell my side of perspective, it helps set the scene from creator’s point of view.
+            The color consistency also was kept in mind while designing.
+        </i></p>
+        <br>
+
+        <br>
+        <h4>Scenes: What are the scenes of your narrative visualization? How are the scenes ordered, and why</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>You can refer to the scene built up in the “Appendix” section of this document or if you reading this on the webpage, you can follow each scene and it’s built up on each navigation point.
+            To address the scene order and why? – To answer a high-level question of “how impactful and severe covid-19 has been?”, it is essential to draw user’s attention on first opening scene to understand the number of cases and how they have progressed in a time frame. Then it is necessary to create a picture of repercussions of growing cases by showing the death numbers as line plot.
+            To understand the relationship between number of cases to the death, becomes essential need for each state within USA. From here straight to the comparison portion of the visualization which depicts user to understand the death rate/number compared to other leading causes (Note- Not of same time period) where data for other reasons were for 1 full year compared to the data for covid-19 from 1.5 years. Here in this scene user can hover to give sense of quantification from positioning of the bar height and along with the positive or negative difference of corresponding bar data with visual dotted horizontal line cutting across and pointing to scale on y-axis. This data in this particular scene is cumulative of all the states.
+            The last scene is built based on previous scene but giving additional flexibility to the user to explore data for various states within the USA.
+        </i></p>
+        <br>
+
+        <br>
+        <h4>Annotations: What template was followed for the annotations, and why that template? How are the annotations used to support the messaging? Do the annotations change within a single scene, and if so, how and why</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>I have used the present annotation style from d3 annotation library, annotation callout circle to be specific which has angular style of pointing to the data point and gives a way to provide title and description to paint the context. The angular way of pointing the data gives cleaner non-overlapping style of communication.
+            This call out annotation is static in nature and remains on the opening of this particular screen but is only attached to the ‘svg’ of this screen alone and does not appear on any other screen.
+            Now circling back to the original question “how impactful and severe covid-19 has been?”, this annotation helps draw a conclusion “from my point of view” that other “leading” death data being for 1 year time frame is still very much comparable and in range to other top leading causes’ death numbers and still lesser compared to deaths by “heart disease”.
+            From my perspective there is also a dynamic annotation referred to as tooltip in first 3 scenes which speaks about the data associated to the coordinate on which user hovers and shows only on action of hovering and then transitions to fade away in 3rd scene.
+        </i></p>
+        <br>
+
+        <br>
+        <h4>Parameters: What are the parameters of the narrative visualization? What are the states of the narrative visualization? How are the parameters used to define the state and each scene?</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>Parameter of scenes are different for few of scenes. For scene 1 and 2, the horizontal axis parameter is date or time related which is a series values and vertical axis is numbers which are quantifiable. The 3rd scene parameter is also “visible and direct” as first 2 scenes, but here its number of deaths and number of cases which are again quantifiable on horizontal and vertical axis respectively. These are static or fixed parameters.
+            Other pieces of parameters implemented in these 3 scenes are tooltip which change the visualization by adding a component of information to scene and the goes away when un-hovered.
+            The 4th scene is categorical on horizontal axis and quantitative on vertical axis. Here there is a hovering parameter which adds the comparison values positive or negative to the existing scene to compare the magnitude of the bars for different category of data and goes away when mouse pointer moves away.
+            Another parameter that could be counted here is the navigation component that is “arrow”, which helps transition between scenes. And similar function is applied on the carousel slider.
+            5th slide is having a dropdown parameter which dynamically changes the state of the visualization by selecting data for different states. Here the state of parameter are the dropdown values which are state within USA.
+        </i></p>
+        <br>
+
+        <br>
+        <h4>Triggers: What are the triggers that connect user actions to changes of state in the narrative visualization? What affordances are provided to the user to communicate to them what options are available to them in the narrative visualization?</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>Tooltip as explained above in first 3 scenes appear when hover is done on a data point and disappears when mouse is moved away. This parameter of mouse event is the trigger which connects the user action to change in the state of the scene user is on.
+            The 4th scene as explained above also has user action-based parameter of mouse action/movement which ties the result to display of the horizontal broken yellow line to demonstrate the magnitude of the y-scale and also shows the positive/negative differences between the bars of the categorical values of the x-axis.
+            And the last scene which is the 5th scene has a dropdown with states values within USA. There is paragraph which points the user to try the dropdown. Otherwise, dropdown is visual enough for common user to try and trigger the change in the bar height based on the data points chosen for different states (also by default “Alabama” appears in the drop-down value)
+            Note if we considering the 1st screen of written paragraphs then all the reference of scenes mentioned above will shift by 1. I did not consider the 1st paragraph slide of visualization as a ‘scene’.
+        </i></p>
+        <br>
+
+        <br>
+        <h4>Update to the data, scripts, data on each scene, also source of data and transformations?</h4>
+        <br>
+        <p style="font-family: 'Comic Sans MS',monospace; text-align: justify"><i>The reference to the data and the inspiration or other resources used are mentioned in the ‘Notes’ tab of the webpage.
+            I have used 2 different methods to group the datapoint by date for covid data and by state which you can find in the GitHub link as ‘data_cleaing.py’
+            ‘covid-us-states-group-date.csv’ is used by scene 1 and 2 which is direct product of method ‘group_by_date_us_covid()’
+
+            Scene 3 uses ‘covid-us-states-group-state.csv’ which is direct output of ‘group_by_state_us_covid()’
+
+            4th scene uses direct hardcoded data points on the bar.js script in function ‘barinit’ the reference can be found in the overall_death.csv which was calculated manually using excel techniques.
+
+            5th scene uses ‘other_death.csv’ which is manually calculated sheet generated from original data cause of other death data from website (mentioned in Notes tab) and covid-19 data (data source mentioned in the Notes tab) and this is for each state.
+        </i></p>
+        <br>
+        <br>
+
         <br>
     </div>
     <div id="vizDIV" style="display: none">
